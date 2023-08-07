@@ -5,6 +5,7 @@ provider "aws" {
     tags = {
       environment = "Dev-ecs-cluster"
       created_by = "Terraform"
+      created_at  = timestamp()
     }
   }
 

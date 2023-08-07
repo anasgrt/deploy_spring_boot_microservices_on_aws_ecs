@@ -5,10 +5,15 @@ resource "aws_kms_key" "ecs_kms_key" {
 
 resource "aws_cloudwatch_log_group" "ecs_cloudwatch_log" {
   name = "ECS_Cloudwatch_Log_Group"
+  tags = {
+    environment = "ecs_special"
+    created_at  = timestamp()
+  }
+
 }
 
 resource "aws_ecs_cluster" "ecs_cluster" {
-  name = "ECS Spring Boot Cluster"
+  name = "ecs_cluster_spring_boot"
 
   configuration {
     execute_command_configuration {
@@ -20,5 +25,8 @@ resource "aws_ecs_cluster" "ecs_cluster" {
         cloud_watch_log_group_name     = aws_cloudwatch_log_group.ecs_cloudwatch_log.name
       }
     }
+  }
+  tags = {
+    created_at  = timestamp()
   }
 }
