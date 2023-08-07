@@ -4,7 +4,7 @@ provider "aws" {
     tags = {
 
       environment = "Dev-ecs-spring_app"
-      created_by = "Terraform"
+      created_by  = "Terraform"
       created_at  = timestamp()
     }
   }
