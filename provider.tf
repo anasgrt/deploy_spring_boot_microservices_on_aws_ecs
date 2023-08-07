@@ -3,7 +3,7 @@ provider "aws" {
 
   default_tags {
     tags = {
-      environment = "Dev"
+      environment = "Dev-ecs-cluster"
       created_by = "Terraform"
     }
   }

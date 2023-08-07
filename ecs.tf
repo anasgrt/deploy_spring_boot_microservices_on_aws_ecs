@@ -4,11 +4,11 @@ resource "aws_kms_key" "ecs_kms_key" {
 }
 
 resource "aws_cloudwatch_log_group" "ecs_cloudwatch_log" {
-  name = "ECS Cloudwatch Log Group"
+  name = "ECS_Cloudwatch_Log_Group"
 }
 
 resource "aws_ecs_cluster" "ecs_cluster" {
-  name = "ECS Cluster"
+  name = "ECS Spring Boot Cluster"
 
   configuration {
     execute_command_configuration {
