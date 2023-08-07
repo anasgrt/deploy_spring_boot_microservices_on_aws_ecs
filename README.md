@@ -21,7 +21,7 @@ No modules.
 | Name | Type |
 |------|------|
 | [aws_cloudwatch_log_group.ecs_cloudwatch_log](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_log_group) | resource |
-| [aws_ecr_repository.springboot_repo](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ecr_repository) | resource |
+| [aws_ecr_repository.service](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ecr_repository) | resource |
 | [aws_ecs_cluster.ecs_cluster](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ecs_cluster) | resource |
 | [aws_kms_key.ecs_kms_key](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/kms_key) | resource |
 
@@ -34,5 +34,4 @@ No inputs.
 | Name | Description |
 |------|-------------|
 | <a name="output_cluster_arn"></a> [cluster\_arn](#output\_cluster\_arn) | The Cluster ARN |
-| <a name="output_ecr_url"></a> [ecr\_url](#output\_ecr\_url) | The ECR Repo URL |
 <!-- END_TF_DOCS -->
