@@ -5,7 +5,6 @@ provider "aws" {
 
       environment = "Dev-ecs-spring_app"
       created_by  = "Terraform"
-      created_at  = timestamp()
     }
   }
   assume_role {
