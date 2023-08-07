@@ -22,11 +22,11 @@ resource "aws_ecs_cluster" "ecs_cluster" {
 
       log_configuration {
         /* cloud_watch_encryption_enabled = true */
-        cloud_watch_log_group_name     = aws_cloudwatch_log_group.ecs_cloudwatch_log.name
+        cloud_watch_log_group_name = aws_cloudwatch_log_group.ecs_cloudwatch_log.name
       }
     }
   }
   tags = {
-    created_at  = timestamp()
+    created_at = timestamp()
   }
 }
