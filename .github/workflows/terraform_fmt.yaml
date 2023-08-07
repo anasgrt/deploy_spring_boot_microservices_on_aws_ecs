@@ -3,6 +3,8 @@ name: Fix terraform file formatting
 on:
 - pull_request
 
+permissions: write-all
+
 jobs:
   format:
     runs-on: ubuntu-latest
