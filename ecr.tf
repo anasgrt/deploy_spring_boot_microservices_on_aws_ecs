@@ -5,8 +5,4 @@ resource "aws_ecr_repository" "springboot_repo" {
     image_scanning_configuration {
       scan_on_push = true
     }
-
-    /* tags = {
-      "Created by" = "Terraform"
-    } */
 }
