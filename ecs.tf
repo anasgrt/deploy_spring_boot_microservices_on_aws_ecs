@@ -22,3 +22,40 @@ resource "aws_ecs_cluster" "ecs_cluster" {
     }
   }
 }
+
+
+data "template_file" "service" {
+  template = "${file("${path.module}/task_definitions/service.json.tpl")}"
+  vars = {
+    ecr_url = var.ecr_url
+    spring_profiles_active = var.spring_profiles_active
+  }
+}
+
+# ECS Task Definition
+resource "aws_ecs_task_definition" "service" {
+  family                = "service"
+  network_mode = "awsvpc"
+  requires_compatibilities = ["FARGATE"]
+  cpu                      = 1024
+  memory                   = 2048
+  execution_role_arn       = aws_iam_role.ecs_service_role.arn
+  /* task_role_arn            = aws_iam_role.ecs_service_role.arn */
+  container_definitions = jsonencode([
+
+    {
+      name      = "spring1"
+      image     = var.ecr_url
+      cpu       = 1024
+      memory    = 2048
+      essential = true
+      portMappings = [
+        {
+          containerPort = 8081
+          hostPort      = 8081
+        }
+      ]
+    }  
+  ])
+
+}

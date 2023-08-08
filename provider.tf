@@ -11,3 +11,7 @@ provider "aws" {
     role_arn = "arn:aws:iam::099211283664:role/admin"
   }
 }
+
+provider "template" {
+  
+}
