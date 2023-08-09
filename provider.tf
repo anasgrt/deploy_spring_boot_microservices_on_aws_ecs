@@ -5,10 +5,13 @@ provider "aws" {
 
       environment = "Dev-ecs-spring_app"
       created_by  = "Terraform"
-      created_at  = timestamp()
     }
   }
   assume_role {
     role_arn = "arn:aws:iam::099211283664:role/admin"
   }
+}
+
+provider "template" {
+  
 }
