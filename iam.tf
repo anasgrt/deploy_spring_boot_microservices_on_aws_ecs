@@ -73,6 +73,6 @@ resource "aws_iam_policy" "ecs_policy" {
 
 resource "aws_iam_policy_attachment" "ecs_policy_attach" {
   name       = "ecs-policy-attachment"
-  roles = [aws_iam_role.ecs_service_role.name]
+  roles      = [aws_iam_role.ecs_service_role.name]
   policy_arn = aws_iam_policy.ecs_policy.arn
 }

@@ -13,5 +13,5 @@ output "rendered_template" {
 
 output "ecs_task_definition" {
   description = "ECS Task Definition ARN"
-  value = aws_ecs_task_definition.service.arn
+  value       = aws_ecs_task_definition.service.arn
 }

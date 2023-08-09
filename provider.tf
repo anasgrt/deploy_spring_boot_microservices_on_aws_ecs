@@ -13,5 +13,5 @@ provider "aws" {
 }
 
 provider "template" {
-  
+
 }

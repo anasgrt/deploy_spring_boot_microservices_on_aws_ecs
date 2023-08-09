@@ -1,6 +1,6 @@
 variable "ecr_url" {
-    type = string
-    default = "099211283664.dkr.ecr.eu-west-1.amazonaws.com/users-microservice:latest"
+  type    = string
+  default = "099211283664.dkr.ecr.eu-west-1.amazonaws.com/users-microservice:latest"
 }
 
 variable "delimiter" {
