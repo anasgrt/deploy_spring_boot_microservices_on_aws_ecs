@@ -40,7 +40,7 @@ resource "aws_ecs_task_definition" "service" {
   cpu                      = 1024
   memory                   = 2048
   execution_role_arn       = aws_iam_role.ecs_service_role.arn
-  /* task_role_arn            = aws_iam_role.ecs_service_role.arn */
+  task_role_arn            = aws_iam_role.ecs_service_role.arn
   container_definitions = jsonencode([
 
     {
@@ -57,5 +57,8 @@ resource "aws_ecs_task_definition" "service" {
       ]
     }
   ])
-
+  runtime_platform {
+    operating_system_family = "LINUX"
+    cpu_architecture        = "X86_64"
+  }
 }
